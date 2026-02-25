@@ -18,5 +18,5 @@ def decrypt(encrypted_message):
     value_check = [abc.find(char) for idx, char in enumerate(encrypted_message)]
     if -1 in value_check:
         raise ValueError("Message contains invalid characters")
-    decrypted_message = "".join([abc[abc.find(char) - 1] if abc.find(char) - 1 > 0 else abc[-1] for idx, char in enumerate(encrypted_message)])
+    decrypted_message = "".join([abc[abc.find(char) - 1] if abc.find(char) - 1 >= 0 else abc[-1] for idx, char in enumerate(encrypted_message)])
     return decrypted_message

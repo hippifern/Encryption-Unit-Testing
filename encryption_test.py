@@ -26,5 +26,11 @@ class TestEncryption(unittest.TestCase):
         with self.assertRaises(ValueError):
             encrypt("DublinÑ")
 
+    def test_alternative_shift_encrypt(self):
+        self.assertEqual("Fwdnkp", encrypt("Dublin", 2))
+
+    def test_alternative_shift_decrypt(self):
+        self.assertEqual("Dublin", decrypt("Fwdnkp", 2))
+
 if __name__ == '__main__':
     unittest.main()
